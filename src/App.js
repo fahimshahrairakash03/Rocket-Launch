@@ -6,8 +6,8 @@ import PostView from "./features/posts/PostView";
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
-      <CounterView></CounterView>
+      <h1>Rocket Launch</h1>
+
       <PostView></PostView>
     </div>
   );
