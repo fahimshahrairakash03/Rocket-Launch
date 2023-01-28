@@ -19,27 +19,25 @@ const PostView = () => {
       {isLoading && <h3>Loading . . . </h3>}
       {error && <h3>{error}</h3>}
 
-      <Row justify="start">
-        <Col span={4}>
-          <div>
-            {posts &&
-              posts.map((post) => (
-                <div className="site-card-border-less-wrapper">
-                  <Card
-                    title={post.mission_name}
-                    bordered={false}
-                    style={{
-                      width: 300,
-                    }}
-                  >
-                    <p>Details: {post.details}</p>
-                    <p>Launch Date: {post.launch_date_local}</p>
-                    <Button type="primary">Details</Button>
-                  </Card>
-                </div>
-              ))}
-          </div>
-        </Col>
+      <Row gutter={[16, 16]}>
+        {posts &&
+          posts.map((post) => (
+            <Col span={8}>
+              <div className="site-card-border-less-wrapper">
+                <Card
+                  title={post.mission_name}
+                  bordered={false}
+                  style={{
+                    width: 300,
+                  }}
+                >
+                  <p>Details: {post.details}. . .</p>
+                  <p>Launch Date: {post.launch_date_local}</p>
+                  <Button type="primary">Details</Button>
+                </Card>
+              </div>
+            </Col>
+          ))}
       </Row>
     </div>
   );
